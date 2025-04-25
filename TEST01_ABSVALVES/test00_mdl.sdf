@@ -1,0 +1,16 @@
+[System]
+Version=2.2
+SystemType=SingleProcessorSystem
+DAQService=DsDAQ
+DsDAQBackground=1
+DAQService=HostService
+Status=Start
+RTP=Master
+
+[Master]
+Type=DS1401
+State=Enabled
+ServiceID=1
+BoardName=unknown
+File=test00_mdl.ppc
+ID=8152D597-5015-46E2-80BC-0EE306C5BF34

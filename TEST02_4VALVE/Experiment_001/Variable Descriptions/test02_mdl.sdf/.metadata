@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VariableDescriptionMetaData SchemaVersion="1">
+  <SerializedFileName>test02_mdl.vdp</SerializedFileName>
+  <IsActive>true</IsActive>
+  <FileName>test02_mdl.sdf</FileName>
+  <VariableDescriptionSourcePathAndFileName>..\..\..\..\..\Desktop\TEST01_ABSVALVES\test02_mdl.sdf</VariableDescriptionSourcePathAndFileName>
+  <ImportOptions>
+    <DisableLookupDetection>false</DisableLookupDetection>
+    <MeasurementArrayOmitThreshold>200000</MeasurementArrayOmitThreshold>
+    <ValueBlockOmitThreshold>200000</ValueBlockOmitThreshold>
+  </ImportOptions>
+</VariableDescriptionMetaData>

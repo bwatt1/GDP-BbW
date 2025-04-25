@@ -1,0 +1,31 @@
+
+
+-- Type definitions for structures
+
+typedef test00_mdl_struct_z8IL72b4r57TjkVvP5IoWE_InputPortsWidth_0 int(32)[2]
+
+struct test00_mdl_struct_z8IL72b4r57TjkVvP5IoWE
+{
+  array-incr: -1
+}
+    structField0 
+    {
+      alias:   "InputPortsWidth"
+      type:    test00_mdl_struct_z8IL72b4r57TjkVvP5IoWE_InputPortsWidth_0
+      offs:    -1
+    }
+endstruct
+
+struct test00_mdl_struct_dZjXwTiylTPloSUBFpnHJB
+{
+  array-incr: -1
+}
+    structField0 
+    {
+      alias:   "InputPortsWidth"
+      type:    int(32)
+      offs:    -1
+    }
+endstruct
+
+

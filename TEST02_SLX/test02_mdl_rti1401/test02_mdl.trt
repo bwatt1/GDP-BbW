@@ -1,0 +1,723 @@
+-- ****************************************************************************
+--
+--  Trace file: test02_mdl.trc
+--
+--  RTI1401 24.1 (02-May-2024)
+--  Fri Apr 25 16:39:13 2025
+--
+--  Copyright 2025, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 0
+--    TRCGenerateLabels             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    TRCOnlyGlobals                = 0
+--    TRCIsOmitVdOn                 = 0
+--
+--  Trace file format: 3
+
+-- ******** Keywords **********************************************************
+-- _application "test02_mdl.map"
+
+_genname     "RTI"
+_genversion  "24.1"
+_gendate     "04/25/2025 04:39:15"
+_description ""
+_author      "RTI1401 24.1 (02-May-2024)"
+_model       "test02_mdl"
+
+-- Default data type formats
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+-- No Data Capture blocks within model: use base sample time as sampling period
+sampling_period[0]
+{
+  value:       0.0001
+  alias:       "HostService"
+  increment:   0.0001
+  unit:        "s"
+}
+
+
+
+-- Type definitions for structures
+
+typedef test02_mdl_struct_z8IL72b4r57TjkVvP5IoWE_InputPortsWidth_0 int(32)[2]
+
+struct test02_mdl_struct_z8IL72b4r57TjkVvP5IoWE
+{
+  array-incr: -1
+}
+    structField0 
+    {
+      alias:   "InputPortsWidth"
+      type:    test02_mdl_struct_z8IL72b4r57TjkVvP5IoWE_InputPortsWidth_0
+      offs:    -1
+    }
+endstruct
+
+
+-- ******** Simulation control variables **************************************
+
+finalTime
+{
+ type:  flt(64,IEEE)*
+ alias: "finalTime"
+ desc:  "Simulation stop time. When reached, simState switches to STOP."
+ flags:  READONLY
+ unit:  "s"
+}
+
+currentTime
+{
+ type:  flt(64,IEEE)*
+ alias: "currentTime"
+ desc:  "Current simulation time. Increments with execution of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+modelStepSize
+{
+ type:  flt(64,IEEE)
+ alias: "modelStepSize"
+ desc:  "Fixed step size of the model, sample time of Timer Task 1."
+ flags: READONLY
+ unit:  "s"
+}
+
+simState
+{
+ type:  int(32)
+ alias: "simState"
+ desc:  "Simulation state: STOP=0 PAUSE=1 RUN=2"
+ unit:  "-"
+}
+
+msg_last_error_no
+{
+ type:  uint(32)
+ alias: "errorNumber"
+ desc:  "Error number of last error message (zero if no error)."
+ unit:  "-"
+ flags: READONLY
+}
+
+p_dsts_sum_of_reset_time
+{
+ type:  flt(64,IEEE)*
+ alias: "sumOfResetTime"
+ desc:  "Internal variable for summing up reset time."
+ unit:  "s"
+ flags: READONLY|HIDDEN
+}
+
+
+-- ******** Task Information variables ****************************************
+group "Task Info"
+{
+ 
+}
+  group "Timer Task 1"
+  {
+   
+  }
+
+  pRti_TIMERA_STime
+  {
+   type:  flt(64,IEEE)*
+   alias: "sampleTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TTime
+  {
+   type:  flt(64,IEEE)*
+   alias: "turnaroundTime"
+   flags: READONLY
+  }
+  pRti_TIMERA_TState
+  {
+   type:  int(32)*
+   alias: "state"
+   flags: READONLY
+  }
+  pRti_TIMERA_OType
+  {
+   type:  int(32)*
+   alias: "overrunCheckType"
+   flags: READONLY
+  }
+  pRti_TIMERA_OMax
+  {
+   type:  int(32)*
+   alias: "overrunQueueMax"
+   flags: READONLY
+  }
+  pRti_TIMERA_ORpt
+  {
+   type:  int(32)*
+   alias: "overrunQueueCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_OCnt
+  {
+   type:  int(32)*
+   alias: "overrunCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_TCnt
+  {
+   type:  flt(64,IEEE)*
+   alias: "taskCallCount"
+   flags: READONLY
+  }
+  pRti_TIMERA_Prio
+  {
+   type:  int(32)*
+   alias: "priority"
+   flags: READONLY
+  }
+  endgroup
+
+
+endgroup
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Out1" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_2_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Out1"
+
+	group "Calib_Psens1_Offset" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Offset"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Constant2" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant2"
+
+	group "Ctrl_BValve1_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve1_PWMFreq"
+
+	group "Ctrl_BValve2_PWMDuty" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve2_PWMDuty"
+
+	group "Ctrl_BValve2_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve2_PWMFreq"
+
+	group "Ctrl_DValve1_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve1_PWMFreq"
+
+	group "Ctrl_DValve2_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[11]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve2_PWMFreq"
+
+	group "Data Type Conversion" -- block-group
+	{
+	 block: "DataTypeConversion"
+	}
+		p_0_test02_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Data Type Conversion"
+
+	group "BV1_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "BV1_DutyGain"
+
+	group "BV2_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "BV2_DutyGain"
+
+	group "Calib_Psens1_Gradient" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_2_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Gradient"
+
+	group "DV1_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DV1_DutyGain"
+
+	group "DV2_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DV2_DutyGain"
+
+	group "NOT" -- block-group
+	{
+	 block: "Logic"
+	}
+		p_0_test02_mdl_boolean_T_1[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "NOT"
+
+	group "Math\nFunction" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction"
+
+	group "Math\nFunction1" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[11]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction1"
+
+	group "Math\nFunction2" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction2"
+
+	group "Math\nFunction3" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction3"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_test02_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add"
+
+	group "Switch" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_test02_mdl_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Switch"
+
+	group "Switch1" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_test02_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Switch1"
+
+  
+  
+	group "ADC_TYPE4_BL1" -- subsystem-group
+
+		p_0_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "ADC_TYPE4_BL1"
+  
+  
+	group "BV1_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "BV1_OUT"
+  
+  
+	group "BV2_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "BV2_OUT"
+  
+  
+	group "DV1_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DV1_OUT"
+  
+  
+	group "DV2_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DV2_OUT"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+
+
+
+endgroup -- "Model Root"
+-- ******** Tunable Parameters ************************************************
+
+group "Tunable Parameters"
+
+
+
+endgroup
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Labels ************************************************************
+
+-- Generation of labels turned off with TRCGenerateLabels option.
+
+-- ******** RTT Dynamic Variables *********************************************
+
+group "RTT Dynamic Variables"
+
+endgroup
+
+-- ******** User variables from model_usr.trc *********************************
+
+-- RTI_USR_TRC_BEGIN
+
+-- No user file test02_mdl_usr.trc found.
+
+-- RTI_USR_TRC_END
+
+-- ******** EESPort States Variables ******************************************
+group "XIL API"
+{ 
+  
+}
+
+  group "EESPort"
+  {  
+    
+  }
+
+    p_xilapi_eesport_activeerrorset_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Active ErrorSet"
+      desc:    "Index of active ErrorSet or 0 if no ErrorSet is active."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    p_xilapi_eesport_erroractivated_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Activated"
+      desc:    "0 - no error is activated on hardware, 1 - at least one error is activated on hardware."  
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+    }
+
+    p_xilapi_eesport_errorswitching_uint32_T
+    {
+      type:    uint(32)*
+      alias:   "Error Switching"
+      desc:    "0 - no switching operation running on hardware, 1 -  switching operation running on hardware."
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 1 >
+    }
+
+    xilapi_eesport_flags_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Flags"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    xilapi_eesport_trigger_uint32_T
+    {
+      type:    uint(32)
+      alias:   "Trigger"
+      flags:   OUTPUT|READONLY
+      range:   < 0 ; 4294967295 >
+    }
+
+    endgroup -- "EESPort"
+
+endgroup -- "XILAPI"
+
+
+
+-- ******** [EOF] *************************************************************
+

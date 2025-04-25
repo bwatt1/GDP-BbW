@@ -1,0 +1,1 @@
+-- call "C:\ProgramData\dSPACE\739CFF9E-CCBC-4969-9DC0-706E8F035210\Compiler\PPCTools\BIN\lnkppc.exe"  -K0 -QmsA0314 -QmsA0407 -QmeA0307 -QmeA0329 -m..\test02_mdl.map -o ..\test02_mdl.ppc -c _tmp_test02_mdl.lk 

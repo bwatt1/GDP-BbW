@@ -1,0 +1,251 @@
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Out1" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_2_test00_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Out1"
+
+	group "Calib_Psens1_Offset" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Offset"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Ctrl_BValve_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve_PWMFreq"
+
+	group "Ctrl_DValve_PWMDuty" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve_PWMDuty"
+
+	group "Ctrl_DValve_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve_PWMFreq"
+
+	group "Ctrl_MABx_StopCmd" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test00_mdl_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_MABx_StopCmd"
+
+	group "Calib_Psens1_Gradient" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_2_test00_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test00_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Gradient"
+
+	group "Math\nFunction" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test00_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction"
+
+	group "Math\nFunction1" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test00_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction1"
+
+	group "Signal\nGenerator" -- block-group
+	{
+	 block: "SignalGenerator"
+	}
+		p_0_test00_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+		p_1_test00_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Amplitude"
+		 flags:   PARAM
+		}
+		p_1_test00_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Frequency"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Signal\nGenerator"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_test00_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add"
+
+	group "Add1" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_test00_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add1"
+
+  
+  
+	group "ADC_TYPE4_BL1" -- subsystem-group
+
+		p_0_test00_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "ADC_TYPE4_BL1"
+  
+  
+	group "DIO_TYPE3_PWM_BL1" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DIO_TYPE3_PWM_BL1"
+  
+  
+	group "DIO_TYPE3_PWM_BL2" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DIO_TYPE3_PWM_BL2"
+  
+  
+	group "DS1401_POWER_DOWN" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DS1401_POWER_DOWN"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+
+
+
+endgroup -- "Model Root"

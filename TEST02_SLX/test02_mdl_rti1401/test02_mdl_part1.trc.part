@@ -1,0 +1,439 @@
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+	group "Out1" -- block-group
+	{
+	 block: "Outport"
+	}
+		p_2_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 flags:   READONLY
+		}
+
+
+
+	endgroup -- block-group "Out1"
+
+	group "Calib_Psens1_Offset" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Offset"
+
+	group "Constant" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant"
+
+	group "Constant1" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant1"
+
+	group "Constant2" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Constant2"
+
+	group "Ctrl_BValve1_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve1_PWMFreq"
+
+	group "Ctrl_BValve2_PWMDuty" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve2_PWMDuty"
+
+	group "Ctrl_BValve2_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_BValve2_PWMFreq"
+
+	group "Ctrl_DValve1_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve1_PWMFreq"
+
+	group "Ctrl_DValve2_PWMFreq" -- block-group
+	{
+	 block: "Constant"
+	}
+		-- Skipping output Out1
+		p_1_test02_mdl_real_T_0[11]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ctrl_DValve2_PWMFreq"
+
+	group "Data Type Conversion" -- block-group
+	{
+	 block: "DataTypeConversion"
+	}
+		p_0_test02_mdl_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Data Type Conversion"
+
+	group "BV1_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "BV1_DutyGain"
+
+	group "BV2_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "BV2_DutyGain"
+
+	group "Calib_Psens1_Gradient" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_2_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Calib_Psens1_Gradient"
+
+	group "DV1_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DV1_DutyGain"
+
+	group "DV2_DutyGain" -- block-group
+	{
+	 block: "Gain"
+	}
+		p_0_test02_mdl_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DV2_DutyGain"
+
+	group "NOT" -- block-group
+	{
+	 block: "Logic"
+	}
+		p_0_test02_mdl_boolean_T_1[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 range:   < 0 ; 1 >
+		 bitmask: 0x01
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "NOT"
+
+	group "Math\nFunction" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction"
+
+	group "Math\nFunction1" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[11]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction1"
+
+	group "Math\nFunction2" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction2"
+
+	group "Math\nFunction3" -- block-group
+	{
+	 block: "Math"
+	}
+		p_0_test02_mdl_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Math\nFunction3"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	}
+		p_0_test02_mdl_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add"
+
+	group "Switch" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_test02_mdl_real_T_0[7]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Switch"
+
+	group "Switch1" -- block-group
+	{
+	 block: "Switch"
+	}
+		p_0_test02_mdl_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+		p_1_test02_mdl_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Threshold"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Switch1"
+
+  
+  
+	group "ADC_TYPE4_BL1" -- subsystem-group
+
+		p_0_test02_mdl_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 flags:   OUTPUT|READONLY
+		}
+
+	endgroup -- subsystem-group "ADC_TYPE4_BL1"
+  
+  
+	group "BV1_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "BV1_OUT"
+  
+  
+	group "BV2_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "BV2_OUT"
+  
+  
+	group "DV1_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DV1_OUT"
+  
+  
+	group "DV2_OUT" -- subsystem-group
+
+
+	endgroup -- subsystem-group "DV2_OUT"
+  
+  
+	group "RTI Data" -- subsystem-group
+
+
+	endgroup -- subsystem-group "RTI Data"
+
+
+
+endgroup -- "Model Root"
